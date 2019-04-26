@@ -4,6 +4,7 @@ import { App } from './app';
 import { BrowserRouter } from 'react-router-dom';
 import { configureStore } from './store';
 import { Provider } from 'react-redux';
+import './styles.css';
 
 const appStore = configureStore();
 
@@ -15,4 +16,3 @@ ReactDOM.render(
     </Provider>,
     document.getElementById('root')
 );
-

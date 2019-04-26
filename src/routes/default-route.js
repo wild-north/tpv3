@@ -8,8 +8,9 @@ export const DefaultRoute = ({component: Component, ...rest}) => (
         <React.Fragment>
             <div className="wrapper">
                 <Header/>
-                <Component {...props} />
-                <div className="footer-push"/>
+                <div className="content">
+                    <Component {...props} />
+                </div>
             </div>
             <Footer/>
         </React.Fragment>

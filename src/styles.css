@@ -1,0 +1,25 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+html,
+body {
+    height: 100%;
+}
+#root {
+    height: 100%;
+}
+.app {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+.wrapper {
+    flex: 1 0 auto;
+}
+.content {
+    padding: 10px;
+}
+.footer {
+    flex: 0 0 auto;
+}
