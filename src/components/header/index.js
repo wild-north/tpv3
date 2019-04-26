@@ -2,6 +2,6 @@ import React from 'react';
 
 export const Header = () => (
     <div>
-        <h6>Header</h6>
+        <h2>Header</h2>
     </div>
 );
