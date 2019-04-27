@@ -1,11 +1,10 @@
 import React, { useEffect } from 'react';
 import { AppRouter } from 'routes';
-import { getUser } from 'services/user';
 import { appConnector } from './connector';
 
-const Application = ({ setCurrentUser }) => {
+const Application = ({ fetchCurrentUser }) => {
     useEffect(() => {
-        getUser(setCurrentUser);
+        fetchCurrentUser();
     });
 
     return (

@@ -10,8 +10,7 @@ const userApi = () => {
     })
 };
 
-export const getUser = (callback) => {
-    userApi()
+export const getUser = () => {
+    return userApi()
         .then(userResponse => register(userResponse))
-        .then(userData => callback(userData));
 };

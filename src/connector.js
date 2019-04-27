@@ -1,13 +1,18 @@
-import { connect } from 'react-redux';
-import { setCurrentUser } from 'actions';
+import { createSelector, createConnector } from 'helpers';
+import { fetchCurrentUser } from 'actions';
 import { userFullName } from 'selectors';
 
-export const appConnector = connect(null, {
-    setCurrentUser
+export const appConnector = createConnector(null, {
+    fetchCurrentUser
 });
 
-const headerSelector = state => ({
-    fullName: userFullName(state)
-});
+const headerSelector = createSelector(
+    userFullName,
+    fullName => ({ fullName })
+);
 
-export const headerConnector = connect(headerSelector, {});
+export const headerConnector = createConnector(headerSelector, {});
+
+// const lockerSelector = createSelector();
+//
+// export const lockerConnector = createConnector(lockerSelector, {});
