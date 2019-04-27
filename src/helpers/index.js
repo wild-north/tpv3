@@ -1,9 +1,6 @@
 import { isFunction } from 'lodash';
 
-export const createAction = type => payload => ({
-    type,
-    payload
-});
+export const createAction = type => payload => ({ type, payload });
 
 export const getContextPath = () => document.location.pathname.split('/')[1];
 
