@@ -7,7 +7,7 @@ import { DefaultRoute } from './default-route';
 export const AppRouter = () => (
     <Fragment>
         <Switch>
-            <DefaultRoute path={ routes.INITIAL } exact component={ InitialPage } />
+            <DefaultRoute path={ routes.INITIAL_PAGE } exact component={ InitialPage } />
 
             <Route path={ '*' } component={ Error404 } />
         </Switch>

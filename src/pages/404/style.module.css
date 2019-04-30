@@ -26,17 +26,13 @@
 
 .head {
     font-size: 230px;
-    margin: 0px;
+    margin: 0;
     font-weight: 900;
     position: absolute;
     left: 50%;
     -webkit-transform: translateX(-50%);
     -ms-transform: translateX(-50%);
     transform: translateX(-50%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-size: cover;
-    background-position: center;
 }
 
 

@@ -1,12 +1,12 @@
 import { includes, omit, pickBy, identity } from 'lodash';
 
-const ADMIN = 'ADMIN';
-const TEST_MANAGER = 'TEST_MANAGER';
-const TEST_MANAGER_ALT = 'TESTMANAGER';
-const TM = [TEST_MANAGER, TEST_MANAGER_ALT];
+export const ADMIN = 'ADMIN';
+export const TEST_MANAGER = 'TEST_MANAGER';
+export const TEST_MANAGER_ALT = 'TESTMANAGER';
+export const TM = [TEST_MANAGER, TEST_MANAGER_ALT];
 // const USER = 'USER';
-const TESTEE = 'TESTEE';
-const CHECKER = 'CHECKER';
+export const TESTEE = 'TESTEE';
+export const CHECKER = 'CHECKER';
 
 class User {
     constructor(userInfo) {
@@ -40,9 +40,9 @@ class User {
             roles[CHECKER] = true;
         }
 
-        this.roles = pickBy(roles, identity);
+        this.roles = Object.keys(pickBy(roles, identity));
 
-        this.isSingleRole = !!Object.keys(this.roles).length;
+        this.isSingleRole = !!this.roles.length;
     }
 
 }
