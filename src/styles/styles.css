@@ -24,3 +24,22 @@ body {
 .footer {
     flex: 0 0 auto;
 }
+
+.breadcrumb {
+    display: inline-block;
+}
+
+.breadcrumb-item {
+    display: inline-block;
+    text-decoration: underline;
+}
+
+.breadcrumb-item:after {
+    content: '>';
+    margin: 0 4px;
+}
+
+.breadcrumb-item:last-child:after {
+    content: '';
+    margin: 0;
+}

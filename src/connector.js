@@ -57,3 +57,10 @@ function getTabItems(roles, id) {
         return acc;
     }, []);
 }
+
+const adminProfileSelector = createSelector(
+    [fullName],
+    (fullName) => ({ fullName })
+);
+
+export const adminProfileConnector = createConnector(adminProfileSelector, NO_ACTION);

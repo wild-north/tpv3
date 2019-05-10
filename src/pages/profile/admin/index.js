@@ -1,4 +1,5 @@
 import React from 'react';
+import { adminProfileConnector } from 'connector';
 
 const AdminProfile = (props) => {
     return (
@@ -8,4 +9,4 @@ const AdminProfile = (props) => {
     );
 };
 
-export default AdminProfile;
+export default adminProfileConnector(AdminProfile);

@@ -6,7 +6,7 @@ export const Header = (props) => {
 
     return (
         <div className={ header }>
-            { fullName ? `Welcome, ${fullName}` : 'Header' }
+            { fullName ? `Welcome, ${fullName}` : ' ' }
         </div>
     );
 };

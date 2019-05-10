@@ -1,9 +1,12 @@
-import React  from 'react';
+import React, { useEffect } from 'react';
+import { userGuard } from 'services/user-guard';
 
-export const InitialPage = () => {
+export const Home = ({ currentUserRoles, currentUserId }) => {
+    useEffect(() => {
+        userGuard(currentUserRoles, currentUserId);
+    },[currentUserRoles, currentUserId]);
+
     return (
-        <div>
-            <p>Initial Page</p>
-        </div>
+        <p>Loading...</p>
     );
 };

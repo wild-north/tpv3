@@ -7,3 +7,13 @@ export const userProfileTabs = {
     [TEST_MANAGER]: {to: TEST_MANAGER_PROFILE, text: 'Test Manager'},
     [TESTEE]: {to: TESTEE_PROFILE, text: 'Testee'}
 };
+
+export const breadcrumbsRoutes = {
+    '/': 'Home',
+    '/profile': null,
+    '/profile/:id': null,
+    '/profile/:id/admin': 'Admin Profile',
+    '/profile/:id/checker': 'Checker Profile',
+    '/profile/:id/test-manager': 'Test-Manager Profile',
+    '/profile/:id/testee': 'Testee Profile'
+};
