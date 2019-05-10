@@ -1,6 +1,8 @@
 import * as cnt from 'actions/constants';
 
 const initialState = {
+    info: {},
+    roles: [],
     isFetching: false,
     isError: false
 };

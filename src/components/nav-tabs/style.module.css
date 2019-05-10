@@ -1,0 +1,27 @@
+@import '../../styles/common-variables.css';
+
+.tab-item {
+    display: inline-block;
+    background-color: var(--inactive-nav-bg-color);
+    border-radius: 4px;
+}
+
+.tab-item {
+    margin-right: 5px;
+}
+
+.tab-item:last-child {
+    margin-right: 0;
+}
+
+.tab-item a {
+    display: inline-block;
+    padding: 10px;
+    color: var(--inactive-nav-color);
+    text-decoration: none;
+}
+
+.active {
+    background-color: var(--active-nav-bg-color);
+    border-radius: 4px;
+}

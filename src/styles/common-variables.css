@@ -32,4 +32,8 @@
 
     --header-color: #A3C644;
     --footer-color: #A3C644;
+    --inactive-nav-bg-color: #DDDDDD;
+    --inactive-nav-color: #33333;
+    --active-nav-bg-color: #A3C644;
+    --active-nav-color: #DDDDDD;
 }
