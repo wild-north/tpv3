@@ -1,7 +1,9 @@
 import React, { Suspense, lazy }  from 'react';
-import { Route, Switch } from 'react-router-dom';
-import { ADMIN_PROFILE, CHECKER_PROFILE, TEST_MANAGER_PROFILE, TESTEE_PROFILE } from 'routes/constants';
+import { Route, Switch, Redirect } from 'react-router-dom';
+import * as routes from 'routes/constants';
 import { NavTabs } from 'components/nav-tabs';
+import { isEmpty } from 'lodash';
+import PropTypes from 'prop-types';
 
 const AdminTab = lazy(
     () => import(/* webpackChunkName: "admin-profile" */'pages/profile/admin')
@@ -27,12 +29,21 @@ export const Profile = (props) => {
             <br/>
             <Suspense fallback={ '' }>
                 <Switch>
-                    <Route path={ ADMIN_PROFILE } exact component={ AdminTab }/>
-                    <Route path={ CHECKER_PROFILE } exact component={ CheckerTab }/>
-                    <Route path={ TEST_MANAGER_PROFILE } exact component={ TestManagerTab }/>
-                    <Route path={ TESTEE_PROFILE } exact component={ TesteeTab }/>
+                    <Route path={ routes.ADMIN_PROFILE } exact component={ AdminTab }/>
+                    <Route path={ routes.CHECKER_PROFILE } exact component={ CheckerTab }/>
+                    <Route path={ routes.TEST_MANAGER_PROFILE } exact component={ TestManagerTab }/>
+                    <Route path={ routes.TESTEE_PROFILE } exact component={ TesteeTab }/>
+                    {
+                        !isEmpty(tabItems) && (
+                            <Redirect from={ routes.PROFILE_PAGE } to={ tabItems[0].to } />
+                        )
+                    }
                 </Switch>
             </Suspense>
         </div>
     );
+};
+
+Profile.propTypes = {
+    tabItems: PropTypes.array.isRequired
 };

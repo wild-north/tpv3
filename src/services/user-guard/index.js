@@ -24,7 +24,7 @@ export const userGuard = (roles, id) => {
         return history.push(getEndpointWithId(endpoints.TESTEE_PROFILE));
     }
 
-    if (window.location.pathname !== '/') {
-        return history.replace(`/`);
-    }
+    // if (window.location.pathname !== '/') {
+    //     return history.replace(`/`);
+    // }
 };

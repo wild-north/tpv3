@@ -31,7 +31,14 @@ body {
 
 .breadcrumb-item {
     display: inline-block;
-    text-decoration: underline;
+}
+
+.breadcrumb-item > a {
+    text-decoration: none;
+}
+
+.breadcrumb-item.active {
+    border-bottom: 1px solid #A3C644;
 }
 
 .breadcrumb-item:after {

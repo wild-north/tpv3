@@ -1,5 +1,5 @@
 import { createSelector, createConnector } from 'helpers';
-import { fetchCurrentUser } from 'actions';
+import { fetchCurrentUser, login } from 'actions';
 import { fullName, roles, id } from 'selectors/user';
 import { showLoader } from 'selectors/common';
 import { NO_ACTION } from 'selectors';
@@ -7,15 +7,7 @@ import { passParamsIntoEndpoint } from 'helpers/endpoints';
 import { reduce } from 'lodash';
 import { userProfileTabs } from 'config';
 
-const appSelector = createSelector(
-    [roles, id],
-    (currentUserRoles, currentUserId) => ({
-        currentUserRoles,
-        currentUserId
-    })
-);
-
-export const appConnector = createConnector(appSelector, {
+export const appConnector = createConnector(null, {
     fetchCurrentUser
 });
 
@@ -55,7 +47,7 @@ function getTabItems(roles, id) {
         acc.push({ ...tab, to: getEndpointWithId(tab.to) });
 
         return acc;
-    }, []);
+    }, []).sort((a,b) => a.sortOrder > b.sortOrder ? 1 : -1);
 }
 
 const adminProfileSelector = createSelector(
@@ -64,3 +56,14 @@ const adminProfileSelector = createSelector(
 );
 
 export const adminProfileConnector = createConnector(adminProfileSelector, NO_ACTION);
+
+const initialPageSelector = createSelector(
+    [roles, id],
+    (roles, id) => ({ roles, id })
+);
+
+export const initialPageConnector = createConnector(initialPageSelector, NO_ACTION);
+
+export const loginConnector = createConnector(null, {
+    submit: login
+});
