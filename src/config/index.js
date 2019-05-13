@@ -19,9 +19,9 @@ export const breadcrumbsRoutes = {
     '/profile/:id/testee': 'Testee',
 
     '/groups': 'Groups',
-    '/groups/:id': 'Group',
-    '/groups/:id/testees': 'Testees',
-    '/groups/:id/test-events': 'Test Events',
+    '/groups/:id': null,
+    '/groups/:id/testee-list': 'Testee List',
+    '/groups/:id/group-tests': 'Group Tests',
 
     '/library': 'Library',
     '/library/topics': 'Topics',
@@ -32,15 +32,20 @@ export const breadcrumbsRoutes = {
 };
 
 export const mainNavigation = [
-    { to: routes.GROUPS, text: 'GROUPS' },
-    { to: routes.LIBRARY, text: 'LIBRARY' },
-    { to: routes.RESULTS, text: 'RESULTS' },
-    { to: routes.USERS, text: 'USERS' }
+    { to: routes.GROUPS, text: 'Groups' },
+    { to: routes.LIBRARY, text: 'Library' },
+    { to: routes.RESULTS, text: 'Results' },
+    { to: routes.USERS, text: 'Users' }
 ];
 
 export const libraryTabs = [
     { to: routes.LIBRARY_TESTS, text: 'Tests' },
     { to: routes.LIBRARY_TOPICS, text: 'Topics' }
+];
+
+export const groupTabs = [
+    { to: routes.GROUP_TESTEE_LIST, text: 'Testee list' },
+    { to: routes.GROUP_TESTS, text: 'Group tests' }
 ];
 
 export const fetchOptions = {

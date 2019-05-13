@@ -8,3 +8,5 @@ export const LOADER_HIDE = 'LOADER_HIDE';
 export const LOGIN_REQUEST = 'LOGIN_REQUEST';
 export const LOGIN_SUCCESS = 'LOGIN_SUCCESS';
 export const LOGIN_ERROR = 'LOGIN_ERROR';
+
+export const SET_ACTIVE_GROUP = 'SET_ACTIVE_GROUP';

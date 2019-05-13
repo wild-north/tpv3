@@ -6,3 +6,4 @@ export const NO_ACTION = {};
 
 export const user = () => get(getStoreState(), 'user');
 export const common = () => get(getStoreState(), 'common');
+export const groups = () => get(getStoreState(), 'groups');

@@ -1,11 +1,12 @@
 import { createSelector, createConnector } from 'helpers';
-import { fetchCurrentUser, login } from 'actions';
+import { fetchCurrentUser, login, setActiveGroup } from 'actions';
 import { fullName, roles, id } from 'selectors/user';
 import { showLoader } from 'selectors/common';
+import { activeGroupId } from 'selectors/groups';
 import { NO_ACTION } from 'selectors';
 import { passParamsIntoEndpoint } from 'helpers/endpoints';
 import { reduce } from 'lodash';
-import { userProfileTabs } from 'config';
+import { userProfileTabs, groupTabs } from 'config';
 
 export const appConnector = createConnector(null, {
     fetchCurrentUser
@@ -67,3 +68,23 @@ export const initialPageConnector = createConnector(initialPageSelector, NO_ACTI
 export const loginConnector = createConnector(null, {
     submit: login
 });
+
+
+const groupDetailsSelector = createSelector(
+    [activeGroupId],
+    (activeGroupId) => ({ tabItems: getGroupTabItems(groupTabs, activeGroupId) })
+);
+
+export const groupDetailsConnector = createConnector(groupDetailsSelector, {
+    setActiveGroup
+});
+
+function getGroupTabItems(tabs, id) {
+    const getEndpointWithId = endpoint => passParamsIntoEndpoint(endpoint, {id});
+
+    return reduce(tabs, (acc, tab) => {
+        acc.push({ ...tab, to: getEndpointWithId(tab.to) });
+
+        return acc;
+    }, []);
+}

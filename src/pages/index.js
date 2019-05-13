@@ -6,4 +6,5 @@ export { Groups } from './groups';
 export { Library } from './library';
 export { Results } from './results';
 export { Users } from './users';
+export { GroupDetails } from './groups/details';
 

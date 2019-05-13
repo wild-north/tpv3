@@ -16,9 +16,10 @@ export const CHECKER_PROFILE = createEndpoint('profile/:id/checker');
 export const TEST_MANAGER_PROFILE = createEndpoint('profile/:id/test-manager');
 
 export const GROUPS = createEndpoint('groups');
-export const GROUP_TESTEES = createEndpoint('group/:id/testees');
-export const GROUP_TEST_EVENTS = createEndpoint('group/:id/test-events');
-export const GROUP_ASSIGN_TEST = createEndpoint('group/:id/assign-test');
+export const GROUP_DETAILS = createEndpoint('groups/:id');
+export const GROUP_TESTEE_LIST = createEndpoint('groups/:id/testee-list');
+export const GROUP_TESTS = createEndpoint('groups/:id/group-tests');
+export const GROUP_ASSIGN_TEST = createEndpoint('groups/:id/assign-test');
 
 export const LIBRARY = createEndpoint('library');
 export const LIBRARY_TESTS = createEndpoint('library/tests');

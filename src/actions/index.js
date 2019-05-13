@@ -5,6 +5,8 @@ export const fetchCurrentUser = createAction(cnt.CURRENT_USER_FETCH_REQUEST);
 export const fetchCurrentUserSuccess = createAction(cnt.CURRENT_USER_FETCH_SUCCESS);
 export const fetchCurrentUserError = createAction(cnt.CURRENT_USER_FETCH_ERROR);
 
+export const setActiveGroup = createAction(cnt.SET_ACTIVE_GROUP);
+
 export const showLoader = createAction(cnt.LOADER_SHOW);
 export const hideLoader = createAction(cnt.LOADER_HIDE);
 
