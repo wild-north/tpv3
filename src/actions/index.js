@@ -12,8 +12,6 @@ export const hideLoader = createAction(cnt.LOADER_HIDE);
 
 export const login = createAction(cnt.LOGIN_REQUEST);
 
-// const createTriplet = (constants) => ({
-//    fetch:  createAction(constants[0]),
-//    success:  createAction(constants[1]),
-//    error:  createAction(constants[2])
-// });
+export const fetchFilms = createAction(cnt.FILMS_FETCH);
+export const showErrorMessage = createAction(cnt.FILMS_ERROR);
+export const filmsFetchSuccess = createAction(cnt.FILMS_SUCCESS);

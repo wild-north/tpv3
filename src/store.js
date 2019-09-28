@@ -1,8 +1,8 @@
 import { createStore, applyMiddleware, compose } from 'redux';
 import createSageMiddleware from 'redux-saga';
+import rootSaga from 'sagas';
 import { reducer } from './reducers';
 import thunk from 'redux-thunk';
-import rootSaga from 'sagas';
 import { setStoreReference } from 'helpers/store';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;

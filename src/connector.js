@@ -1,5 +1,10 @@
 import { createSelector, createConnector } from 'helpers';
-import { fetchCurrentUser, login, setActiveGroup } from 'actions';
+import {
+    fetchCurrentUser,
+    login,
+    setActiveGroup,
+    fetchFilms
+} from 'actions';
 import { fullName, roles, id } from 'selectors/user';
 import { showLoader } from 'selectors/common';
 import { activeGroupId } from 'selectors/groups';
@@ -88,3 +93,12 @@ function getGroupTabItems(tabs, id) {
         return acc;
     }, []);
 }
+//////////////////////////////////////////////////////////
+// const omdbSelector = createSelector(
+//     [activeGroupId],
+//     (activeGroupId) => ({ tabItems: getGroupTabItems(groupTabs, activeGroupId) })
+// );
+
+export const omdbConnector = createConnector(null, {
+    fetchData: fetchFilms
+});

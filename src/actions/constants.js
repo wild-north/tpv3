@@ -10,3 +10,6 @@ export const LOGIN_SUCCESS = 'LOGIN_SUCCESS';
 export const LOGIN_ERROR = 'LOGIN_ERROR';
 
 export const SET_ACTIVE_GROUP = 'SET_ACTIVE_GROUP';
+export const FILMS_FETCH = 'FILMS_FETCH';
+export const FILMS_ERROR = 'FILMS_ERROR';
+export const FILMS_SUCCESS = 'FILMS_SUCCESS';
